@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('patrimonios', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('estabelecimento_id')
+            $table->foreignId('estabelecimento_pai_id')
             ->constrained('estabelecimentos')
             ->restrictedOnDelete();
 
