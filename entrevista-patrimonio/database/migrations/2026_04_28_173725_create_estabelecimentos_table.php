@@ -16,12 +16,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('tipo_estabelecimento_id')
             ->constrained('tipo_estabelecimentos')
-            ->restrictedOnDelete();
+            ->onDelete('restrict');
 
             $table->string('nome');
             $table->string('cnpj', 14)->unique();
             $table->unsignedInteger('prazo_maximo_emprestimo_dias')->nullable();
-            
+
             $table->timestamps();
         });
     }
