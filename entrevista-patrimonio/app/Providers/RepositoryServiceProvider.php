@@ -20,7 +20,7 @@ class RepositoryServiceProvider extends ServiceProvider
     [
         EstabelecimentoRepositoryInterface::class => EstabelecimentoRepository::class,
         PatrimonioRepositoryInterface::class => PatrimonioRepository::class,
-        EmprestimoRepository::class => EmprestimoRepository::class,
+        EmprestimoRepositoryInterface::class => EmprestimoRepository::class,
 
     ];
     /**
