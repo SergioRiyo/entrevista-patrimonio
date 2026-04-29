@@ -12,5 +12,5 @@ interface PatrimonioRepositoryInterface extends BaseRepositoryInterface{
     // ... outros métodos
     public function comEmprestimoAtivo(): Collection;
 
-    public function baixar(int $id, string $data): Model;
+    public function baixar(int $id, array $dados): bool;
 }
