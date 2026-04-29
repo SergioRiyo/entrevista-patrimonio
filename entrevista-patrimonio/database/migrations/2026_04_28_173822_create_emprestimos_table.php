@@ -16,11 +16,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('estabelecimento_requerente_id')
             ->constrained('estabelecimentos')
-            ->restrictedOnDelete();
+            ->onDelete('restrict');
 
             $table->foreignId('estabelecimento_atendente_id')
             ->constrained('estabelecimentos')
-            ->restrictedOnDelete();
+            ->onDelete('restrict');
 
             $table->enum('status', [
                 'ativo',

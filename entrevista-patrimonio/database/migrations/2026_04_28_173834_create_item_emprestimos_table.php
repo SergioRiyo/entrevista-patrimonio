@@ -16,11 +16,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('emprestimo_id')
             ->constrained('emprestimos')
-            ->restrictedOnDelete();
+            ->onDelete('restrict');
 
             $table->foreignId('patrimonio_id')
             ->constrained('patrimonios')
-            ->restrictedOnDelete();
+            ->onDelete('restrict');
 
             $table->date('data_emprestimo');
             $table->date('data_devolucao');

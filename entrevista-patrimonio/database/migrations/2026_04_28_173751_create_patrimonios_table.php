@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->foreignId('estabelecimento_pai_id')
             ->constrained('estabelecimentos')
-            ->restrictedOnDelete();
+            ->onDelete('restrict');
 
             $table->string('nome');
             $table->string('codigo')->unique();
