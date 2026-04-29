@@ -33,12 +33,14 @@ class PatrimonioRepository extends BaseRepository implements PatrimonioRepositor
         ->get();
     }
 
-    public function baixar(int $id, string $data): Model{
-        $patrimonio = $this->findOrFail($id);
-        $patrimonio->update([
-            'data_baixa' => $data,
-            'motivo_baixa' => $data
-            ]);
-    return $patrimonio;
-    }
+    public function baixar(int $id, array $dados): bool
+{
+    $patrimonio = $this->findOrFail($id);
+    return $patrimonio->update([
+        'data_baixa'   => $dados['data_baixa'],
+        'motivo_baixa' => $dados['motivo_baixa'],
+    ]);
+}
+
+    
 }

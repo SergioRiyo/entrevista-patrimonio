@@ -36,6 +36,6 @@ class Patrimonio extends Model
 
     public function estaBaixado(): bool
     {
-        return ! is_null($this->data_baixa);
+        return $this->data_baixa !== null;
     }
 }
