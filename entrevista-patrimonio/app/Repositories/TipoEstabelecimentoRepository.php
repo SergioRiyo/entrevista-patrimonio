@@ -10,7 +10,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class TipoEstabelecimentoRepository extends BaseRepository implements BaseRepositoryInterface{
 
-    public function __contruct(TipoEstabelecimento $model){
-        parent::__construct($model);
-    }
+    public function __construct(TipoEstabelecimento $model){
+    parent::__construct($model);
+}
 }
