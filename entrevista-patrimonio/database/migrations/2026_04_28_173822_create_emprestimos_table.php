@@ -6,10 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    protected $table = 'emprestimos';
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('emprestimos', function (Blueprint $table) {
@@ -31,9 +28,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('emprestimos');
