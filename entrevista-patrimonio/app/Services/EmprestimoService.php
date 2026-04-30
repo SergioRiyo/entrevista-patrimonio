@@ -26,6 +26,9 @@ class EmprestimoService
     {
         return $this->emprestimoRepository->buscarComRelacionamentos($id);
     }
+    public function excluir(int $id){
+        return $this->emprestimoRepository->delete($id);
+    } 
 
     public function criar(array $dados): Emprestimo
     {
