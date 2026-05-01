@@ -6,7 +6,9 @@
     <h2>Empréstimos</h2>
 
     <p>
-        <a href="{{ route('emprestimos.create') }}">Novo Empréstimo</a>
+        <div class="page-actions">
+            <a class="button" href="{{ route('emprestimos.create') }}">Novo Empréstimo</a>
+        </div>
     </p>
 
     <table border="1" cellpadding="8" cellspacing="0">
@@ -40,7 +42,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" onclick="return confirm('Deseja excluir este empréstimo?')">
+                            <button class="danger" type="submit" onclick="return confirm('Deseja excluir este empréstimo?')">
                                 Excluir
                             </button>
                         </form>

@@ -6,7 +6,9 @@
     <h2>Patrimônios</h2>
 
     <p>
-        <a href="{{ route('patrimonios.create') }}">Novo Patrimônio</a>
+        <div class="page-actions">
+            <a class="button" href="{{ route('patrimonios.create') }}">Novo Patrimônio</a>
+        </div>
     </p>
 
     <table border="1" cellpadding="8" cellspacing="0">
@@ -45,7 +47,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" onclick="return confirm('Deseja excluir este patrimônio?')">
+                            <button class="danger" type="submit" onclick="return confirm('Deseja excluir este patrimônio?')">
                                 Excluir
                             </button>
                         </form>
