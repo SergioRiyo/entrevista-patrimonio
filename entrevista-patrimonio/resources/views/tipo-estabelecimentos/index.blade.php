@@ -6,7 +6,9 @@
     <h2>Tipos de Estabelecimento</h2>
 
     <p>
-        <a href="{{ route('tipo-estabelecimentos.create') }}">Novo Tipo de Estabelecimento</a>
+        <div class="page-actions">
+             <a class="button" href="{{ route('tipo-estabelecimentos.create') }}">Novo Tipo de Estabelecimento</a>
+        </div>
     </p>
 
     <table border="1" cellpadding="8" cellspacing="0">
@@ -35,7 +37,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" onclick="return confirm('Deseja excluir este tipo?')">
+                            <button class="danger" type="submit" onclick="return confirm('Deseja excluir este tipo?')">
                                 Excluir
                             </button>
                         </form>

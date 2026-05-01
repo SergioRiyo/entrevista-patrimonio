@@ -6,9 +6,11 @@
 @section('content')
     <h2>Estabelecimentos</h2>
     <p>
-        <a href="{{ route('estabelecimentos.create') }}">
-            Novo estabelecimento
-        </a>
+        <div class="page-actions">
+            <a class="button" href="{{ route('estabelecimentos.create') }}">
+                Novo estabelecimento
+            </a>
+        </div>
     </p>
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
@@ -42,7 +44,7 @@
                             style="display: inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" onclick="return confirm('Deseja excluir este estabelecimento?')">
+                            <button class="danger" type="submit" onclick="return confirm('Deseja excluir este estabelecimento?')">
                                 Excluir
                             </button>
                         </form>
