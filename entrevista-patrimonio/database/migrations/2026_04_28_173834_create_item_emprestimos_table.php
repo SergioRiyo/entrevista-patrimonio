@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+
+    public function up(): void
+    {
+        Schema::create('item_emprestimos', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('emprestimo_id')
+            ->constrained('emprestimos')
+            ->onDelete('restrict');
+
+            $table->foreignId('patrimonio_id')
+            ->constrained('patrimonios')
+            ->onDelete('restrict');
+
+            $table->date('data_emprestimo');
+            $table->date('data_devolucao');
+            $table->timestamps();
+
+            $table->unique(['emprestimo_id', 'patrimonio_id']);
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('item_emprestimos');
+    }
+};
