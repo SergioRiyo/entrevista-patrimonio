@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StorePatrimonioRequest extends FormRequest
 {
@@ -16,7 +17,7 @@ class StorePatrimonioRequest extends FormRequest
         return [
             'estabelecimento_pai_id' => ['required', 'exists:estabelecimentos,id'],
             'nome' => ['required', 'string', 'max:255'],
-            'codigo' => ['required', 'string', 'max:100', 'unique'],
+            'codigo' => ['required', 'string', Rule::unique('patrimonios', 'codigo')],
             'tipo' => ['required', 'in:proprio,alugado,emprestado'],
             'data_entrada' => ['required', 'date'],
         ];
