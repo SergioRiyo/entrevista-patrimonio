@@ -14,11 +14,12 @@ class PatrimonioRepository extends BaseRepository implements PatrimonioRepositor
         parent::__construct($model);
     }
 
-    public function disponiveisPorEstabelecimento(int $estabelecimentoId): Collection{
-        return $this->model  
+    public function disponiveisPorEstabelecimento(int $estabelecimentoId): Collection
+    {
+    return $this->model
         ->newQuery()
-        ->where('estabelecimento_id', $estabelecimentoId)
-        ->where('data_baixa', null)
+        ->where('estabelecimento_pai_id', $estabelecimentoId)
+        ->whereNull('data_baixa')
         ->orderBy('nome')
         ->get();
     }
