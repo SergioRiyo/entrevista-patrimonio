@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BaixarPatrimonioRequest;
 use App\Http\Requests\StorePatrimonioRequest;
 use App\Http\Requests\UpdatePatrimonioRequest;
+use App\Models\Estabelecimento;
 use App\Models\Patrimonio;
 use App\Services\EstabelecimentoService;
 use App\Services\PatrimonioService;
@@ -82,5 +83,17 @@ class PatrimonioController extends Controller
         return redirect()
             ->route('patrimonios.show', $patrimonio)
             ->with('success', 'Patrimônio baixado com sucesso.');
+    }
+
+    public function disponiveisPorEstabelecimento(Estabelecimento $estabelecimento)
+    {
+        $patrimonios = $this->patrimonioService->disponiveisPorEstabelecimento($estabelecimento->id);
+
+        return response()->json($patrimonios->map(fn($p) =>[
+            'id' => $p->id,
+            'nome' => $p->nome,
+            'codigo' => $p->codigo,
+            ])->values()
+        );
     }
 }

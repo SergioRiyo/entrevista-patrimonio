@@ -44,4 +44,7 @@ class PatrimonioService {
     public function excluir(int $id){
         return $this->patrimonioRepository->delete($id);
     }
+    public function disponiveisPorEstabelecimento(int $id){
+        return $this->patrimonioRepository->disponiveisPorEstabelecimento($id);
+    }
 }
