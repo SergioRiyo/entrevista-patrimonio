@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('emprestimos.index');
 });
+Route::get('patrimonios/disponiveis/{estabelecimento}',[PatrimonioController::class, 'disponiveisPorEstabelecimento'])->name('patrimonios.disponiveis');
 
 Route::resource('tipo-estabelecimentos', TipoEstabelecimentoController::class);
 Route::resource('estabelecimentos', EstabelecimentoController::class);
